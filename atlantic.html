@@ -226,13 +226,12 @@
 	}
 	
 		#content #pagination a.button {
-			color: #FFFFFF;
+			color: #444444;
 			font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 			font-size: 10px;
 			font-weight: bold;
 			text-transform: uppercase;
 			text-decoration: none;
-			background: #D00000;
 			margin-left: 12px;
 		}
 		
@@ -400,7 +399,16 @@
 	</style>
 	
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
-  <script src="http://static.tumblr.com/thpaaos/78Jks5gyt/carousel.js" type="text/javascript"></script>
+
+<script src="http://static.tumblr.com/fpifyru/VCxlv9xwi/writecapture.js"> </script>
+
+<script src="http://static.tumblr.com/fpifyru/AKFlv9zdu/embedgist.js"></script>
+
+<!-- Using github gists 
+
+<div class="gist">https://gist.github.com/#INSERT GIST NUMBER HERE#</div>
+-->
+
 </head>
 <body>
 	<div id="content">
@@ -547,6 +555,30 @@
 				{block:IfShowNotesOnPermalinkPage}{PostNotes}{/block:IfShowNotesOnPermalinkPage}
 
         {block:Permalink}
+        
+        
+        
+        
+    {block:Permalink}
+    
+    <br />
+    <br />
+    
+    
+    		<div id="pagination">
+
+			{block:Pagination}
+			{lang:CurrentPage of TotalPages 2}
+			{block:PreviousPage}<a href="{PreviousPage}" class="button">{lang:Previous page}</a>{/block:PreviousPage} 
+			{block:NextPage}<a href="{NextPage}" class="button">{lang:Next page}</a>{/block:NextPage}
+			{/block:Pagination}
+			{block:PermalinkPagination}
+			{block:NextPost}<a href="{NextPost}" class="button">{lang:Previous post}</a>{/block:NextPost}
+			{block:PreviousPost}<a href="{PreviousPost}" class="button">{lang:Next post}</a>{/block:PreviousPost} 
+			{/block:PermalinkPagination}
+		</div>
+		
+		
         {block:IfDisqusShortname}
         <div class="notecontainer" style="margin: 20px 0 1px 0; padding: 1px 10px 10px 10px;">
           <div id="disqus_thread"></div>
@@ -561,28 +593,6 @@
 		</div>
 		{/block:Posts}
 		
-		<div id="pagination">
-			<div class="rss">{lang:RSS feed}: <a href="{RSS}">{RSS}</a></div>
-			{block:Pagination}
-			{lang:CurrentPage of TotalPages 2}
-			{block:PreviousPage}<a href="{PreviousPage}" class="button">{lang:Previous page}</a>{/block:PreviousPage} 
-			{block:NextPage}<a href="{NextPage}" class="button">{lang:Next page}</a>{/block:NextPage}
-			{/block:Pagination}
-			{block:PermalinkPagination}
-			{block:NextPost}<a href="{NextPost}" class="button">{lang:Previous post}</a>{/block:NextPost}
-			{block:PreviousPost}<a href="{PreviousPost}" class="button">{lang:Next post}</a>{/block:PreviousPost} 
-			{/block:PermalinkPagination}
-		</div>
-		
-
-		
-		<div id="footer">
-			<form action="/search" method="get">
-			    <input type="text" class="text" name="q" value="{SearchQuery}"/>
-			    <input type="submit" value="Search"/>
-			</form>
-			Theme is <a href="http://www.tumblr.com/theme/467">The Atlantic</a> by <a href="http://www.petervidani.com">Peter Vidani</a> for <a href="http://www.tumblr.com">Tumblr</a>.
-	</div>
 	
   {block:IfDisqusShortname}
   <script type="text/javascript">
