@@ -457,7 +457,7 @@
                {/block:ifStackExchange}
                
                 {block:ifHackerNews}
-                    <a href="{text:Twitter}">
+                    <a href="{text:Hacker News}">
                         <i class="fa fa-hacker-news">&nbsp;&nbsp;&nbsp;</i>
                     </a>
                {/block:ifHackerNews}
@@ -561,11 +561,7 @@
     
 		<div id="pagination">
 
-			{block:Pagination}
-			{lang:CurrentPage of TotalPages 2}
-			{block:PreviousPage}<a href="{PreviousPage}" class="button">{lang:Previous page}</a>{/block:PreviousPage} 
-			{block:NextPage}<a href="{NextPage}" class="button">{lang:Next page}</a>{/block:NextPage}
-			{/block:Pagination}
+
 			
 			{block:PermalinkPagination}
 			{block:NextPost}<a href="{NextPost}" class="button">{lang:Previous post}</a>{/block:NextPost}
@@ -588,6 +584,17 @@
 		</div>
 		{/block:Posts}
 		
+		
+		<div id="pagination">
+		
+			{/block:PermalinkPagination}
+			{lang:CurrentPage of TotalPages 2}
+			{block:PreviousPage}<a href="{PreviousPage}" class="button">{lang:Previous page}</a>{/block:PreviousPage} 
+			{block:NextPage}<a href="{NextPage}" class="button">{lang:Next page}</a>{/block:NextPage}
+			{/block:PermalinkPagination}
+			
+		</div>
+
 	
   {block:IfDisqusShortname}
   <script type="text/javascript">
