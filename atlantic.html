@@ -25,6 +25,8 @@
     <meta name="text:Github" content="">
     <meta name="text:Stack Exchange" content="">
     <meta name="text:Hacker News" content="">
+    <meta name="text:Google Analytics ID" content="">
+
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
@@ -560,12 +562,31 @@
     <br />
     
 		<div id="pagination">
-
-
-			
+		
 			{block:PermalinkPagination}
 			{block:NextPost}<a href="{NextPost}" class="button">{lang:Previous post}</a>{/block:NextPost}
 			{block:PreviousPost}<a href="{PreviousPost}" class="button">{lang:Next post}</a>{/block:PreviousPost} 
+			
+<br /> 
+                            <strong>{lang:Share this}</strong>:
+
+                            <a href="mailto:?Body={Permalink}">
+                                <i class="fa fa-envelope-o">&nbsp;&nbsp;&nbsp;</i>
+                            </a>
+
+                            <a href="http://www.facebook.com/sharer.php?u={Permalink}" target="_blank">
+                                <i class="fa fa-facebook">&nbsp;&nbsp;&nbsp;</i>
+                            </a>
+
+                            <a href="https://plus.google.com/share?url={Permalink}" target="_blank">
+                            <i class="fa fa-google-plus">&nbsp;&nbsp;&nbsp;</i>
+                        </a>
+
+                            <a href="http://twitter.com/share?url={Permalink}" target="_blank">
+                                <i class="fa fa-twitter">&nbsp;&nbsp;&nbsp;</i>
+                            </a>
+
+                    
 			{/block:PermalinkPagination}
 			
 		</div>
@@ -612,5 +633,35 @@
     //]]>
     </script>
   {/block:IfDisqusShortname}
+  
+  <form action="/search" method="get" class="sfm">
+    <input type="text" name="q" value="{SearchQuery}" id="sf"/>
+    <input type="submit" value="Search" id="sb"/>
+</form>
+
+<style>
+    
+    .sfm input {background-color: #444444; 
+    font-size: 13px; 
+    border: 0px; 
+    text-transform: uppercase; 
+    margin-top: 0px; 
+    color: #FFFFFF; 
+    letter-spacing: 1px; 
+    padding: 4px 8px;
+    font-family: calibri, helvetica, arial;}
+    
+</style>
+  
+    {block:IfGoogleAnalyticsID}
+    <script>
+        var gaID = '{text:Google Analytics ID}';
+    </script>
+    <script src="http://static.tumblr.com/7esz91z/9IRn5krc2/googleanalytics.js">
+    </script>
+    {/block:IfGoogleAnalyticsID}
+  
+  
+  
 </body>
 </html>
