@@ -3,6 +3,7 @@
 
 <html lang="en">
 <head>	
+<head>	
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="generator" content="Sublime www.sublimetext.com/3">
 	<meta name="author" content="Vikram Dhillon">
@@ -402,7 +403,7 @@
 	{CustomCSS}			
 	</style>
 	
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
 
 <script src="http://static.tumblr.com/fpifyru/VCxlv9xwi/writecapture.js"> </script>
 
@@ -574,6 +575,9 @@
 			{block:NextPost}<a href="{NextPost}" class="button">{lang:Previous post}</a>{/block:NextPost}
 			{block:PreviousPost}<a href="{PreviousPost}" class="button">{lang:Next post}</a>{/block:PreviousPost}
                     
+            <!-- Sharing widgets -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid={text:Addthis Pubid}"></script> 
+
 			{/block:PermalinkPagination}
 			
 		</div>
@@ -591,8 +595,6 @@
         {/block:Permalink}
 		</div>
 		
-<!-- Sharing widgets -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid={text:Addthis Pubid}"></script>
 
 		{/block:Posts}
 		
@@ -652,7 +654,6 @@
     <script src="http://static.tumblr.com/7esz91z/9IRn5krc2/googleanalytics.js">
     </script>
     {/block:IfGoogleAnalyticsID}
-  
   
   
 </body>
