@@ -4,8 +4,8 @@
 <html lang="en">
 <head>	
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="generator" content="TextMate http://macromates.com/">
-	<meta name="author" content="Peter Vidani">
+	<meta name="generator" content="Sublime www.sublimetext.com/3">
+	<meta name="author" content="Vikram Dhillon">
 	<meta name="viewport" content="width=790">
 	<title>{Title}{block:PostTitle} - {PostTitle}{/block:PostTitle}</title>	
 	{block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
@@ -13,20 +13,20 @@
 	<link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}" />
 	
 	<meta name="text:Disqus shortname" content="" />
-	
 	<meta name="if:Show RSS and Archive buttons" content="1">
 	<meta name="if:Show URL in posts" content="1">
 	<meta name="if:Show note count" content="1">
 	<meta name="if:Show notes on permalink page" content="1">
 	
 	<meta name="text:Email" content="">
-    <meta name="text:Google Plus" content="">
-    <meta name="text:Twitter" content="">
-    <meta name="text:Github" content="">
-    <meta name="text:Stack Exchange" content="">
-    <meta name="text:Hacker News" content="">
-    <meta name="text:Google Analytics ID" content="">
-
+    	<meta name="text:Google Plus" content="">
+    	<meta name="text:Twitter" content="">
+    	<meta name="text:Github" content="">
+    	<meta name="text:Stack Exchange" content="">
+    	<meta name="text:Hacker News" content="">
+    	<meta name="text:Google Analytics ID" content="">
+    	<meta name="google-site-verification" content="CgQrvW4GETqWcdVZphDcvYeAJlHa_YN6O34eqhEQQac" />
+    	<meta name="text:Addthis Pubid" content="">
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
@@ -39,6 +39,10 @@
 		background: #FFFFFF;
 		margin: 40px 0 20px 0;
 		padding: 0;
+	}
+	
+	em {
+	    color: #26A65B;
 	}
 	
 	a:active, a:focus { outline: 0; }
@@ -398,7 +402,7 @@
 	{CustomCSS}			
 	</style>
 	
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
 
 <script src="http://static.tumblr.com/fpifyru/VCxlv9xwi/writecapture.js"> </script>
 
@@ -418,19 +422,14 @@
 				{block:IfShowRSSAndArchiveButtons}
 				<div class="buttons">
 					<a href="{RSS}" class="button">{lang:RSS}</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/archive" class="button">{lang:Archive}</a>
-				</div>
-				{/block:IfShowRSSAndArchiveButtons}
-				<div style="clear: both"></div>
-            
-			</div>
-			<div id="bottom">
-				{block:Description}{Description}&nbsp;&nbsp;&nbsp;{/block:Description}
-				
-				{block:HasPages}
-     
-                {block:ifEmail}
+					
+                    <br />	 
+                    <br />
+                    
+					{block:ifEmail}
+					
                     <a href="mailto:{text:Email}">
-                        <i class="fa fa-envelope-o">&nbsp;&nbsp;&nbsp;</i>
+                        Follow me: &nbsp;&nbsp;<i class="fa fa-envelope-o">&nbsp;&nbsp;&nbsp;</i>
                     </a>
                 {/block:ifEmail}
 
@@ -463,16 +462,24 @@
                         <i class="fa fa-hacker-news">&nbsp;&nbsp;&nbsp;</i>
                     </a>
                {/block:ifHackerNews}
-               
-               
-                <br />
-                <br />
-
+             
+				</div>
+				
+				{/block:IfShowRSSAndArchiveButtons}
+				
+				<div style="clear: both"></div>
+            
+			</div>
+			
+			<div id="bottom">
+				{block:Description}{Description}&nbsp;&nbsp;&nbsp;{/block:Description}
+				
+				{block:HasPages}
+<br />
     {block:Pages}<a href="{URL}">{Label}</a>&nbsp;&nbsp;&nbsp;{/block:Pages}
-                    
+                  
                 {/block:HasPages}
-                
-                
+
                 {block:AskEnabled}<a href="/ask">{AskLabel}</a>&nbsp;&nbsp;{/block:AskEnabled}
                 {block:SubmissionsEnabled}<a href="/submit">{SubmitLabel}</a>{/block:SubmissionsEnabled}
 			</div>
@@ -565,27 +572,7 @@
 		
 			{block:PermalinkPagination}
 			{block:NextPost}<a href="{NextPost}" class="button">{lang:Previous post}</a>{/block:NextPost}
-			{block:PreviousPost}<a href="{PreviousPost}" class="button">{lang:Next post}</a>{/block:PreviousPost} 
-			
-<br /> 
-                            <strong>{lang:Share this}</strong>:
-
-                            <a href="mailto:?Body={Permalink}">
-                                <i class="fa fa-envelope-o">&nbsp;&nbsp;&nbsp;</i>
-                            </a>
-
-                            <a href="http://www.facebook.com/sharer.php?u={Permalink}" target="_blank">
-                                <i class="fa fa-facebook">&nbsp;&nbsp;&nbsp;</i>
-                            </a>
-
-                            <a href="https://plus.google.com/share?url={Permalink}" target="_blank">
-                            <i class="fa fa-google-plus">&nbsp;&nbsp;&nbsp;</i>
-                        </a>
-
-                            <a href="http://twitter.com/share?url={Permalink}" target="_blank">
-                                <i class="fa fa-twitter">&nbsp;&nbsp;&nbsp;</i>
-                            </a>
-
+			{block:PreviousPost}<a href="{PreviousPost}" class="button">{lang:Next post}</a>{/block:PreviousPost}
                     
 			{/block:PermalinkPagination}
 			
@@ -603,6 +590,10 @@
         {/block:IfDisqusShortname}
         {/block:Permalink}
 		</div>
+		
+<!-- Sharing widgets -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid={text:Addthis Pubid}"></script>
+
 		{/block:Posts}
 		
 		
@@ -650,6 +641,7 @@
     letter-spacing: 1px; 
     padding: 4px 8px;
     font-family: calibri, helvetica, arial;}
+    
     
 </style>
   
