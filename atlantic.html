@@ -11,8 +11,10 @@
 	<meta name="generator" content="Sublime www.sublimetext.com/3">
 	<meta name="author" content="Vikram Dhillon">
 	<meta name="viewport" content="width=790">
+	
 	<title>{Title}{block:PostTitle} - {PostTitle}{/block:PostTitle}</title>	
 	{block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+	
 	<link rel="shortcut icon" href="{Favicon}">
 	<link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}" />
 	
@@ -34,10 +36,10 @@
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-    
+    <!-- 'Helvetica Neue' --> 
 	<style type="text/css">
 	body {
-		font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-family: 'Helvetica Neue';
 		font-size: 12px;
 		color: #444444;
 		background: #FFFFFF;
@@ -167,38 +169,16 @@
 				text-decoration: none;
 			}
 			
-				#content #newDay .post a:hover { color: #D00000; }
+				#content #newDay .post a:hover { 
+				    color: #D00000; 
+				    
+				}
 				
-		/* this is for chat */
-		#content #newDay .post table {
-			font-family: Georgia;
-			font-size: 14px;
-			margin: 0 0 10px 0;
-			border-collapse: collapse;
-		}
-
-			#content #newDay .post table tr td {
-				padding: 0;
-				vertical-align: top;
-			}
-
-			#content #newDay .post table tr td.name {
-				font-weight: bold;
-				text-align: right;
-				padding: 4px 15px;
-			}
-
-			#content #newDay .post table tr td.words {
-				width: 100%;
-				text-align: left;
-				padding: 4px 1px;
-			}
-		/* that was for chat */
 			
 		#content #newDay .bottom {
 			width: 100%;
 			color: #444444;
-      font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-family: 'Helvetica Neue';
 			font-size: 10px;
 			line-height: 1.8;
 			text-transform: uppercase;
@@ -235,7 +215,7 @@
 	
 		#content #pagination a.button {
 			color: #444444;
-			font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+			font-family: 'Helvetica Neue';
 			font-size: 10px;
 			font-weight: bold;
 			text-transform: uppercase;
@@ -244,7 +224,7 @@
 		}
 		
 		#content #pagination .rss { 
-			font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+			font-family: 'Helvetica Neue';
 			font-size: 10px;
 			float: left;
 		}
@@ -288,7 +268,7 @@
 
 			ol.notes li.note {
 				color: #777;
-				font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+				font-family: 'Helvetica Neue';
 				font-size: 10px;
 		    border-top: solid 1px #ccc;
 		    padding: 4px;
@@ -314,7 +294,7 @@
 				}
 
 				ol.notes li.note blockquote {
-			    border-color: #eee;
+			    border-color: #C0392B;
 			    padding: 4px 10px;
 			    margin: 10px 0px 0px 25px;
 				}
@@ -327,6 +307,7 @@
 					text-decoration: underline;
 				}
 				
+				
     ul#likes {
 	    border-bottom: 1px solid #202020;
 	    list-style-type: none;
@@ -337,7 +318,7 @@
 
 	  li.like_post {
 	    width: 150px;		    
-      font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+      font-family: 'Helvetica Neue';
       font-size: 10px;list-style-type: none;
       margin: 0;
 	    padding: 0 56px 0 0; 
@@ -358,7 +339,7 @@
 	    li.like_post blockquote {
 	      margin: 0;
 	      padding: 0 0 0 10px;
-	      border-left: 1px solid #eee;
+	      border-left: 1px solid #C0392B;
 	    }
 
 	    li.like_post .like_link a {
@@ -435,37 +416,37 @@
 					{block:ifEmail}
 					
                     <a href="mailto:{text:Email}">
-                        Follow me: &nbsp;&nbsp;<i class="fa fa-envelope-o">&nbsp;&nbsp;&nbsp;</i>
+                        <i class="fa fa-envelope-o fa-2x">&nbsp;&nbsp;&nbsp;</i>
                     </a>
                 {/block:ifEmail}
 
                 {block:ifGooglePlus}
                 <a href="{text:Google Plus}">
-                        <i class="fa fa-google-plus">&nbsp;&nbsp;&nbsp;</i>
+                        <i class="fa fa-google-plus fa-2x">&nbsp;&nbsp;&nbsp;</i>
                     </a>
                 {/block:ifGooglePlus}
                 
                 {block:ifTwitter}
                     <a href="{text:Twitter}">
-                        <i class="fa fa-twitter">&nbsp;&nbsp;&nbsp;</i>
+                        <i class="fa fa-twitter fa-2x"></i>&nbsp;&nbsp;&nbsp;</i>
                     </a>
                {/block:ifTwitter}
 
                 {block:ifGithub}
                     <a href="{text:Github}">
-                        <i class="fa fa-github">&nbsp;&nbsp;&nbsp;</i>
+                        <i class="fa fa-git fa-2x">&nbsp;&nbsp;&nbsp;</i>
                     </a>
                {/block:ifGithub}
                
                 {block:ifStackExchange}
                     <a href="{text:Stack Exchange}">
-                        <i class="fa fa-stack-overflow">&nbsp;&nbsp;&nbsp;</i>
+                        <i class="fa fa-stack-overflow fa-2x">&nbsp;&nbsp;&nbsp;</i>
                     </a>
                {/block:ifStackExchange}
                
                 {block:ifHackerNews}
                     <a href="{text:Hacker News}">
-                        <i class="fa fa-hacker-news">&nbsp;&nbsp;&nbsp;</i>
+                        <i class="fa fa-hacker-news fa-2x">&nbsp;&nbsp;&nbsp;</i>
                     </a>
                {/block:ifHackerNews}
              
@@ -493,6 +474,7 @@
 		
 		{block:Posts}
 		<div id="newDay">
+		
 		    {block:Date}
 			<div class="date">
 				{Month} {DayOfMonth}, {Year}
@@ -501,9 +483,15 @@
 			
 			<div class="post">
 				{block:Text}
-				{block:Title}<a href="{Permalink}" class="h2 title">{Title}</a>{/block:Title}
+				
+				{block:Title}
+				<i class="fa fa-terminal fa-2x"></i> &nbsp;&nbsp;
+				<a href="{Permalink}" class="h2 title">{Title}</a>
+				{/block:Title}
+				
 				<p>{Body}</p>
 				{/block:Text}
+
 
 				{block:Link}
 				<a href="{URL}" class="h2" {Target}>{Name}</a>
@@ -535,15 +523,6 @@
 					</table>
 				{/block:Chat}
 				
-				{block:Audio}
-				  {block:AudioEmbed}
-						{AudioEmbed-640}
-					{/block:AudioEmbed}
-					{block:AudioPlayer}
-					  {AudioPlayerBlack}
-					{/block:AudioPlayer}
-					<p>{block:Caption}{Caption}{/block:Caption}</p>
-				{/block:Audio}
 				
 				{block:Video}
 					{Video-500}
@@ -556,17 +535,24 @@
 					URL:  <a href="{ShortURL}">{ShortURL}</a>{block:IfShowURLInPosts}<br />
 					{block:IfDisqusShortname}(<a href="{Permalink}#disqus_thread" style="text-transform:lowercase;">{lang:View comments}</a>)&nbsp;{/block:IfDisqusShortname}
 					{/block:Date}
+					
 					{block:IfShowNoteCount}
   					{block:NoteCount}
+  					
   					<div class="notes">(<a href="{Permalink}">{lang:Notes}: {FormattedNoteCount}</a>)</div>&nbsp;&nbsp;
+  					
   					{/block:NoteCount}
   				    {/block:IfShowNoteCount}
+  				    
 					{block:HasTags}
 					<div class="tags"><span style="text-transform:uppercase;">{lang:Filed under}</span>: {block:Tags}<a href="{TagURL}">{Tag}</a>&nbsp;{block:Tags}</div>
 					{/block:HasTags}
+					
 				</div>
 				<div class="clear"></div>
-				{block:IfShowNotesOnPermalinkPage}{PostNotes}{/block:IfShowNotesOnPermalinkPage}
+				
+				{block:IfShowNotesOnPermalinkPage}{PostNotes}
+				{/block:IfShowNotesOnPermalinkPage}
 			
 			
         {block:Permalink}
