@@ -650,15 +650,6 @@
             </style>
 
             
-
-
-
-
-
-			{/block:PermalinkPagination}
-			
-		</div>
-		
         {block:IfDisqusShortname}
         <div class="notecontainer" style="margin: 20px 0 1px 0; padding: 1px 10px 10px 10px;">
           <div id="disqus_thread"></div>
@@ -669,6 +660,30 @@
           {lang:Blog comments powered by Disqus 2}
         </div>
         {/block:IfDisqusShortname}
+
+  {block:IfDisqusShortname}
+  <script type="text/javascript">
+  //<![CDATA[
+  (function() {
+    var links = document.getElementsByTagName('a');
+    var query = '?';
+    for(var i = 0; i < links.length; i++) {
+      if(links[i].href.indexOf('#disqus_thread') >= 0) {
+        query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+      }
+    }
+    document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/get_num_replies.js' + query + '"></' + 'script>');
+    })();
+    //]]>
+    </script>
+  {/block:IfDisqusShortname}
+
+
+			{/block:PermalinkPagination}
+			
+		</div>
+		
+
         {/block:Permalink}
 		</div>
 		
@@ -687,22 +702,7 @@
 		</div>
 
 	
-  {block:IfDisqusShortname}
-  <script type="text/javascript">
-  //<![CDATA[
-  (function() {
-    var links = document.getElementsByTagName('a');
-    var query = '?';
-    for(var i = 0; i < links.length; i++) {
-      if(links[i].href.indexOf('#disqus_thread') >= 0) {
-        query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
-      }
-    }
-    document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/get_num_replies.js' + query + '"></' + 'script>');
-    })();
-    //]]>
-    </script>
-  {/block:IfDisqusShortname}
+
   
   <form action="/search" method="get" class="sfm">
     <input type="text" name="q" value="{SearchQuery}" id="sf"/>
