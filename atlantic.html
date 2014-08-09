@@ -383,7 +383,7 @@
     a.arrow.forward {
       display: none !important;
     }
-			
+    
 	{CustomCSS}			
 	</style>
 	
@@ -415,20 +415,21 @@
                     
 					{block:ifEmail}
 					
-                    <a href="mailto:{text:Email}">
-                        <i class="fa fa-envelope-o fa-2x">&nbsp;&nbsp;&nbsp;</i>
+                    <a href="mailto:{text:Email}"> 
+                        <i class="fa fa-envelope-o fa-2x" >&nbsp;&nbsp;&nbsp;</i>
                     </a>
+                    
                 {/block:ifEmail}
 
                 {block:ifGooglePlus}
-                <a href="{text:Google Plus}">
+                <a href="{text:Google Plus}" style="color: rgba(172, 0, 0, .7)">
                         <i class="fa fa-google-plus fa-2x">&nbsp;&nbsp;&nbsp;</i>
                     </a>
                 {/block:ifGooglePlus}
                 
                 {block:ifTwitter}
-                    <a href="{text:Twitter}">
-                        <i class="fa fa-twitter fa-2x"></i>&nbsp;&nbsp;&nbsp;</i>
+                    <a href="{text:Twitter}" style="color: rgba(0, 172, 237, .7)">
+                        <i class="fa fa-twitter fa-2x">&nbsp;&nbsp;&nbsp;</i>
                     </a>
                {/block:ifTwitter}
 
@@ -439,13 +440,13 @@
                {/block:ifGithub}
                
                 {block:ifStackExchange}
-                    <a href="{text:Stack Exchange}">
+                    <a href="{text:Stack Exchange}" style="color: rgba(50, 80, 109, 1)">
                         <i class="fa fa-stack-overflow fa-2x">&nbsp;&nbsp;&nbsp;</i>
                     </a>
                {/block:ifStackExchange}
                
                 {block:ifHackerNews}
-                    <a href="{text:Hacker News}">
+                    <a href="{text:Hacker News}" style="color: rgba(255, 102, 0, 1)">
                         <i class="fa fa-hacker-news fa-2x">&nbsp;&nbsp;&nbsp;</i>
                     </a>
                {/block:ifHackerNews}
