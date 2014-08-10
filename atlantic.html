@@ -12,7 +12,10 @@
 	<meta name="author" content="Vikram Dhillon">
 	<meta name="viewport" content="width=790">
 	
-	<title>{Title}{block:PostTitle} - {PostTitle}{/block:PostTitle}</title>	
+	<title>
+	{Title}{block:PostTitle} - {PostTitle}{/block:PostTitle}
+	</title>	
+	
 	{block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
 	
 	<link rel="shortcut icon" href="{Favicon}">
@@ -32,11 +35,12 @@
     	<meta name="text:Hacker News" content="">
     	<meta name="text:Google Analytics ID" content="">
     	<meta name="google-site-verification" content="CgQrvW4GETqWcdVZphDcvYeAJlHa_YN6O34eqhEQQac" />
-    	<meta name="text:Addthis Pubid" content="">
+    	<meta name="text:Addthis ID" content="">
+    	<meta name="text:Filament" context="">
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <!-- 'Helvetica Neue' --> 
+
 	<style type="text/css">
 	body {
 		font-family: 'Helvetica Neue';
@@ -47,9 +51,11 @@
 		padding: 0;
 	}
 	
+	
 	em {
-	    color: #26A65B;
+	    color: #34495E;
 	}
+	
 	
 	a:active, a:focus { outline: 0; }
 					
@@ -170,7 +176,7 @@
 			}
 			
 				#content #newDay .post a:hover { 
-				    color: #D00000; 
+				    color: rgb(210, 82, 127); 
 				    
 				}
 				
@@ -391,12 +397,22 @@
 
 <script src="http://static.tumblr.com/fpifyru/VCxlv9xwi/writecapture.js"> </script>
 
-<script src="http://static.tumblr.com/fpifyru/AKFlv9zdu/embedgist.js"></script>
-
 <!-- Using github gists 
+
+<script src="http://static.tumblr.com/fpifyru/AKFlv9zdu/embedgist.js"></script>
 
 <div class="gist">https://gist.github.com/#INSERT GIST NUMBER HERE#</div>
 -->
+
+
+<!-- IvyFlare --> 
+
+<script type="text/javascript">(function() {
+  var fl = document.createElement('script'); fl.type = 'text/javascript'; fl.async = true; fl.src = document.location.protocol + '{text:Filament}';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(fl, s);
+})();</script>
+
+<!-- IvyFlare --> 
 
 </head>
 <body>
@@ -405,10 +421,16 @@
 	<div id="content">
 		<div id="header">
 			<div id="top">
-				<a href="/" class="title">{Title}</a>
+				
+				<a href="/" class="title"> 
+					 <i class="fa fa-bug"> </i> 
+					{Title}
+				</a>
+					
+					
 				{block:IfShowRSSAndArchiveButtons}
 				<div class="buttons">
-					<a href="{RSS}" class="button">{lang:RSS}</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/archive" class="button">{lang:Archive}</a>
+					<a href="{RSS}" class="button"><i class="fa fa-rss"></i>&nbsp;{lang:RSS}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/archive" class="button"><i class="fa fa-archive"></i>&nbsp;{lang:Archive}</a>
 					
                     <br />	 
                     <br />
@@ -460,16 +482,18 @@
 			</div>
 			
 			<div id="bottom">
-				{block:Description}{Description}&nbsp;&nbsp;&nbsp;{/block:Description}
+			
+			{block:Description}{Description}&nbsp;&nbsp;&nbsp;{/block:Description}
 				
 				{block:HasPages}
 <br />
-    {block:Pages}<a href="{URL}">{Label}</a>&nbsp;&nbsp;&nbsp;{/block:Pages}
+    {block:Pages}<a href="{URL}"><i class="fa fa-laptop"></i>&nbsp;{Label}</a>&nbsp;&nbsp;&nbsp;{/block:Pages}
                   
                 {/block:HasPages}
 
                 {block:AskEnabled}<a href="/ask">{AskLabel}</a>&nbsp;&nbsp;{/block:AskEnabled}
                 {block:SubmissionsEnabled}<a href="/submit">{SubmitLabel}</a>{/block:SubmissionsEnabled}
+                
 			</div>
 		</div>
 		
@@ -486,8 +510,10 @@
 				{block:Text}
 				
 				{block:Title}
-				<i class="fa fa-terminal fa-2x"></i> &nbsp;&nbsp;
+				
+				<i class="fa fa-terminal fa-2x" style="color:rgb(210, 82, 127)"></i> &nbsp;&nbsp;
 				<a href="{Permalink}" class="h2 title">{Title}</a>
+					
 				{/block:Title}
 				
 				<p>{Body}</p>
@@ -537,23 +563,12 @@
 					{block:IfDisqusShortname}(<a href="{Permalink}#disqus_thread" style="text-transform:lowercase;">{lang:View comments}</a>)&nbsp;{/block:IfDisqusShortname}
 					{/block:Date}
 					
-					{block:IfShowNoteCount}
-  					{block:NoteCount}
-  					
-  					<div class="notes">(<a href="{Permalink}">{lang:Notes}: {FormattedNoteCount}</a>)</div>&nbsp;&nbsp;
-  					
-  					{/block:NoteCount}
-  				    {/block:IfShowNoteCount}
-  				    
-					{block:HasTags}
+				    {block:HasTags}
 					<div class="tags"><span style="text-transform:uppercase;">{lang:Filed under}</span>: {block:Tags}<a href="{TagURL}">{Tag}</a>&nbsp;{block:Tags}</div>
 					{/block:HasTags}
 					
 				</div>
 				<div class="clear"></div>
-				
-				{block:IfShowNotesOnPermalinkPage}{PostNotes}
-				{/block:IfShowNotesOnPermalinkPage}
 			
 			
         {block:Permalink}
@@ -567,13 +582,14 @@
 			{block:PermalinkPagination}
 			
 		<!-- Anything in here shows up just for posts -->
+
+<!-- Addthis social icons -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid={text:Addthis ID}"></script>
+
 			
 			{block:NextPost}<a href="{NextPost}" class="button">{lang:Previous post}</a>{/block:NextPost}
 			{block:PreviousPost}<a href="{PreviousPost}" class="button">{lang:Next post}</a>{/block:PreviousPost}
                     
-            <!-- Sharing widgets -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid={text:Addthis Pubid}"></script> 
-            
             <progress value="0"></progress>
             
             <script>
@@ -598,42 +614,43 @@
             
             <style> 
                 
-            progress {
-                /* Positioning */
-                position: fixed;
-                left: 0;
-                top: 0;
+                progress {
+                    /* Positioning */
+                    position: fixed;
+                    left: 0;
+                    top: 0;
+                    
+                    /* Dimensions */
+                    width: 100%;
+                    height: 2px;
+                    
+                    /* Reset the appearance */
+                    -webkit-appearance: none;
+                     -moz-appearance: none;
+                          appearance: none;
+                    
+                    /* Get rid of the default border in Firefox/Opera. */
+                    border: none;
+                    
+                    /* Progress bar container for Firefox/IE10+ */
+                    background-color: transparent;
+                    
+                    /* Progress bar value for IE10+ */
+                    color: purple;
+                }
+    
+                progress::-webkit-progress-bar {
+                  background-color: transparent;
+                }
                 
-                /* Dimensions */
-                width: 100%;
-                height: 2px;
+                progress::-webkit-progress-value {
+                  background-color: purple;
+                }
                 
-                /* Reset the appearance */
-                -webkit-appearance: none;
-                 -moz-appearance: none;
-                      appearance: none;
+                progress::-moz-progress-bar {
+                  background-color: purple;
+                }
                 
-                /* Get rid of the default border in Firefox/Opera. */
-                border: none;
-                
-                /* Progress bar container for Firefox/IE10+ */
-                background-color: transparent;
-                
-                /* Progress bar value for IE10+ */
-                color: purple;
-            }
-
-            progress::-webkit-progress-bar {
-              background-color: transparent;
-            }
-            
-            progress::-webkit-progress-value {
-              background-color: purple;
-            }
-            
-            progress::-moz-progress-bar {
-              background-color: purple;
-            }
             </style>
 
             
@@ -712,11 +729,19 @@
 </style>
   
     {block:IfGoogleAnalyticsID}
+    
     <script>
-        var gaID = '{text:Google Analytics ID}';
-    </script>
-    <script src="http://static.tumblr.com/7esz91z/9IRn5krc2/googleanalytics.js">
-    </script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '{text:Google Analytics ID}', 'auto');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+
     {/block:IfGoogleAnalyticsID}
   
   
